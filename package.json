@@ -1,0 +1,54 @@
+{
+  "name": "patrick-thunderbolt",
+  "productName": "Patrick Thunderbolt",
+  "version": "0.9.0",
+  "description": "Patrick Thunderbolt - The Last Judgement (fangame, beta)",
+  "main": "main.js",
+  "author": "JustPatMX",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.tunombre.patrickthunderbolt",
+    "productName": "Patrick Thunderbolt",
+    "copyright": "Fangame no oficial",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "game/**/*",
+      "build/icon.png"
+    ],
+    "asar": false,
+    "artifactName": "PatrickThunderbolt-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
